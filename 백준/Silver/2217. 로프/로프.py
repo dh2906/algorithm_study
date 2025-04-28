@@ -1,9 +1,11 @@
-N = int(input())
+import sys
+
+N = int(sys.stdin.readline())
 ropes = []
 weights = []
 
 for i in range(N):
-    ropes.append(int(input()))
+    ropes.append(int(sys.stdin.readline()))
 
 ropes.sort(reverse=True)
 
