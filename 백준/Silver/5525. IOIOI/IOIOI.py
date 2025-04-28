@@ -1,12 +1,21 @@
-N = int(input())
-M = int(input())
-S = input()
+import sys
+n = int(sys.stdin.readline().rstrip())
+m = int(sys.stdin.readline().rstrip())
+s = sys.stdin.readline().rstrip()
 
-P = "IOI" + "OI" * (N - 1)
-res = 0
+cur = 0
+count = 0
+result = 0
 
-for i in range(len(S) - len(P) + 1):
-    if S[i] == 'I' and S[i:i + len(P)] == P:
-        res += 1
+while cur < (m - 1):
+    if s[cur:cur + 3] == 'IOI':
+        count += 1
+        cur += 2
+        if count == n:
+            result += 1
+            count -= 1
+    else:
+        count = 0
+        cur += 1
 
-print(res)
+print(result)
