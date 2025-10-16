@@ -1,9 +1,7 @@
-import sys
-
 lst = []
 
 for i in range(5):
-    lst.append(int(sys.stdin.readline()))
+    lst.append(int(input()))
 
 lst.sort()
 
