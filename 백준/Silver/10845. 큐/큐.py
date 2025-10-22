@@ -13,16 +13,16 @@ for _ in range(n):
         queue.append(v)
 
     elif op == 'pop':
-        print(queue.pop(0) if queue else -1)
+        sys.stdout.write(f"{queue.pop(0) if queue else -1}\n")
 
     elif op == 'size':
-        print(len(queue))
+        sys.stdout.write(f"{len(queue)}\n")
 
     elif op == 'empty':
-        print(0 if queue else 1)
+        sys.stdout.write(f"{0 if queue else 1}\n")
 
     elif op == 'front':
-        print(queue[0] if queue else -1)
+        sys.stdout.write(f"{queue[0] if queue else -1}\n")
 
     else:
-        print(queue[-1] if queue else -1)
+        sys.stdout.write(f"{queue[-1] if queue else -1}\n")
