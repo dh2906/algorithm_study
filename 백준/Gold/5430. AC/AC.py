@@ -6,7 +6,7 @@ t = int(sys.stdin.readline())
 for _ in range(t):
     p = sys.stdin.readline()
     n = int(sys.stdin.readline())
-    lst = deque(sys.stdin.readline()[1:-2].strip().split(','))
+    lst = deque(sys.stdin.readline()[1:-2].split(','))
 
     if n == 0:
         lst = deque()
@@ -31,8 +31,8 @@ for _ in range(t):
                 flag = True
                 break
 
-    if r_cnt % 2 != 0:
-        lst.reverse()
-
     if not flag:
+        if r_cnt % 2 != 0:
+            lst.reverse()
+        
         print('[' + ','.join(lst) + ']')
