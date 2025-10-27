@@ -1,32 +1,22 @@
 import sys
 
-n = int(sys.stdin.readline())
-str = ""
+t = int(sys.stdin.readline())
 
-for i in range(n):
-    str = sys.stdin.readline().strip()
-    vps = []
-    is_break = False
-    
-    for j in str:
-        if j == '(':
-            vps.append(1)
+for _ in range(t):
+    brackets = sys.stdin.readline().strip()
+    s = []
+    flag = True
+
+    for b in brackets:
+        if b == '(':
+            s.append(b)
 
         else:
-            if len(vps) > 0:
-                vps.pop()
+            if len(s) != 0:
+                s.pop()
 
             else:
-                print("NO")
-                is_break = True
+                flag = False
                 break
 
-    if is_break == True:
-        continue
-
-    else:
-        if len(vps) == 0:
-            print("YES")
-
-        else:
-            print("NO")
+    print('YES' if flag and not s else 'NO')
