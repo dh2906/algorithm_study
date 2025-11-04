@@ -22,10 +22,10 @@ def bfs(y, x):
             if ny < 0 or ny >= N or nx < 0 or nx >= M:
                 continue
 
-            if board[ny][nx] == 0: # 주변이 바다인 경우
+            if board[ny][nx] == 0:
                 water[y][x] += 1
 
-            if board[ny][nx] != 0 and visited[ny][nx] == False: # 주변이 빙산인 경우
+            if board[ny][nx] != 0 and visited[ny][nx] == False:
                 q.append((ny, nx))
                 visited[ny][nx] = True
 
