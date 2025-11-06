@@ -1,22 +1,21 @@
-n, m = map(int, input().split())
-arr = []
-isused = [False] * 11
+import sys
 
-
-def dfs(k):
+def backtracking(k):
     if k == m:
-        for i in range(m):
-            print(arr[i], end=" ")
-            
-        print()
+        print(*arr)
         return
 
-    for j in range(1, n+1, 1):
-        if j not in arr:
+    for j in range(1, n + 1):
+        if not visited[j]:
             arr.append(j)
-            isused[j] = True
-            dfs(k+1)
-            isused[j] = False
+            visited[j] = True
+            backtracking(k + 1)
+            visited[j] = False
             arr.pop()
 
-dfs(0)
+n, m = map(int, sys.stdin.readline().split())
+
+arr = []
+visited = [False] * 11
+
+backtracking(0)
